@@ -125,6 +125,10 @@ function bones_scripts_and_styles() {
   global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
 
   if (!is_admin()) {
+	  
+	  	// register google fonts
+		
+		wp_register_style( 'playfair-display-sc', 'http://fonts.googleapis.com/css?family=Playfair+Display+SC:400,400italic,700,700italic,900,900italic', array(), false, 'all' );
 
 		// modernizr (without media query polyfill)
 		wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
@@ -147,6 +151,7 @@ function bones_scripts_and_styles() {
 		wp_enqueue_script( 'bones-modernizr' );
 		wp_enqueue_style( 'bones-stylesheet' );
 		wp_enqueue_style( 'bones-ie-only' );
+		wp_enqueue_style( 'playfair-display-sc' );
 
 		$wp_styles->add_data( 'bones-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
 
@@ -164,6 +169,25 @@ function bones_scripts_and_styles() {
 /*********************
 THEME SUPPORT
 *********************/
+
+// Adding Aesop Story Engine Plugin Theme Support
+
+add_theme_support("aesop-component-styles", 
+	array(
+	"parallax", 
+	"image", 
+	"quote", 
+	"gallery", 
+	"content", 
+	"video", 
+	"audio", 
+	"collection", 
+	"chapter", 
+	"document", 
+	"character",
+	 "map", 
+	 "timeline" ) 
+);
 
 // Adding WP 3+ Functions & Theme Support
 function bones_theme_support() {
