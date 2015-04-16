@@ -16,11 +16,11 @@ GENERAL STYLES
 *********************/
 
 body {
-	font-family: $lato;
+	font-family: $playfair;
 	font-size: 100%;
 	line-height: 1.5;
 	color: $text-color;
-	background-color: $gray;
+	background-color: $white;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
 }
@@ -124,12 +124,14 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 h1, .h1 {
 	font-size: 2.5em;
 	line-height: 1.333em;
+	font-family: $playfair-sc;
 }
 
 h2, .h2 {
 	font-size: 1.75em;
 	line-height: 1.4em;
 	margin-bottom: 0.375em;
+	font-family: $playfair-sc;
 }
 
 h3, .h3 {
@@ -153,15 +155,28 @@ HEADER STYLES
 *********************/
 
 .header {
-	background-color: $black;
+	background-color: none;
+	display: flex;
+	height: 90px;
+	align-items: center;
+	z-index: 3;
 }
 
 	#logo {
-		margin: 0.75em 0;
+		margin: 1.9em 0em 0em -2em;
+		transform:scale(0.5);
+		float: left;
 
 		a {
 			color: $white;
 		}
+	}
+	
+	.tag-line {
+		color: $green;
+		margin-top: 7.1em;
+		font-size: 1.4em;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 	}
 
 /*********************
@@ -259,7 +274,7 @@ POSTS & CONTENT STYLES
 			background-color: $white;
 			border-radius: 3px;
 			margin-bottom: 1.5em;
-			border: 1px solid $border-color;
+			/*border: 1px solid $border-color;*/
 
 			header {
 				border-bottom: 1px solid $light-gray;

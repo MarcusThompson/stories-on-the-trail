@@ -129,6 +129,8 @@ function bones_scripts_and_styles() {
 	  	// register google fonts
 		
 		wp_register_style( 'playfair-display-sc', 'http://fonts.googleapis.com/css?family=Playfair+Display+SC:400,400italic,700,700italic,900,900italic', array(), false, 'all' );
+		
+		wp_register_style('playfair-display', 'http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic');
 
 		// modernizr (without media query polyfill)
 		wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
@@ -152,6 +154,7 @@ function bones_scripts_and_styles() {
 		wp_enqueue_style( 'bones-stylesheet' );
 		wp_enqueue_style( 'bones-ie-only' );
 		wp_enqueue_style( 'playfair-display-sc' );
+		wp_enqueue_style( 'playfair-display' );
 
 		$wp_styles->add_data( 'bones-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
 
